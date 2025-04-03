@@ -4,13 +4,37 @@ import axios from "axios";
 const API_KEY = process.env.NEXT_PUBLIC_CRYPTO_API_KEY;
 
 // Define types
-export  interface CryptoData {
+export interface CryptoData {
   id: string;
-  name: string;
   symbol: string;
-  price_usd: number;
-  percent_change_24h: number;
-  market_cap_usd: number;
+  name: string;
+  image: string;
+  current_price: number;
+  market_cap: number;
+  market_cap_rank: number;
+  fully_diluted_valuation: number;
+  total_volume: number;
+  high_24h: number;
+  low_24h: number;
+  price_change_24h: number;
+  price_change_percentage_24h: number;
+  market_cap_change_24h: number;
+  market_cap_change_percentage_24h: number;
+  circulating_supply: number;
+  total_supply: number;
+  max_supply: number | null;
+  ath: number;
+  ath_change_percentage: number;
+  ath_date: string; // ISO date string
+  atl: number;
+  atl_change_percentage: number;
+  atl_date: string; // ISO date string
+  roi: {
+    times: number;
+    currency: string;
+    percentage: number;
+  } | null;
+  last_updated: string; // ISO date string
 }
 
 export  interface CryptoState {
@@ -27,13 +51,18 @@ const initialState: CryptoState = {
 
 // Fetch cryptocurrency data
 export const fetchCryptoData = createAsyncThunk("crypto/fetch", async () => {
+  const coinIds = ["bitcoin", "ethereum", "solana"]; // Replace with any other coin you want
   const response = await axios.get<{ data: CryptoData[] }>(
-    `https://pro-api.coingecko.com/api/v3/coins/id`,{
-        headers:{accept: 'application/json', 'x-cg-api-key': 'CG-G7Q9h35nB9yKywxQ8z4gKVen'}
+    `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${coinIds.join(",")}&order=market_cap_desc`,
+    {
+      headers: {
+        accept: "application/json",
+        "x-cg-api-key": "CG-G7Q9h35nB9yKywxQ8z4gKVen",
+      },
     }
   );
-  console.log(response);
-  return response.data.data;
+  console.log(response.data);
+  return response.data;
 });
 
 const cryptoSlice = createSlice({
