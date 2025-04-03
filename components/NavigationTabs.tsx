@@ -15,10 +15,10 @@ export default function NavigationTabs() {
         <TabsList className='grid w-full grid-cols-3 '>
             <Link href={`/weather`}><TabsTrigger value="weather"  className='w-full dark:text-accent-foreground'>Weather</TabsTrigger>
             </Link>
-            <Link href={`/`}>
+            <Link href={`/crypto`}>
             <TabsTrigger value="crypto" className='w-full dark:text-accent-foreground'>Crypto</TabsTrigger>
             </Link>
-            <Link href={`/`}>
+            <Link href={`/news`}>
             <TabsTrigger value="news" className={cn(`w-full dark:text-accent-foreground`)}>News</TabsTrigger>
             </Link>
         </TabsList>

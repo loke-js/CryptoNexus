@@ -12,18 +12,18 @@ const layout = ({ children }: { children: React.ReactNode }) => {
         <div className="flex h-screen">
             <div className="flex flex-col flex-1 min-h-screen">
                 <header className="flex items-center justify-between px-4  h-[50px] container">
-                    <div className='flex items-center justify-center'>
+                    <div className='flex items-center justify-center max-sm:hidden'>
                     <Logo/>
                     </div>
-                    <BreadCrumbHeader />
+                    <MobileSideBar/>
+                   { <BreadCrumbHeader />}
                         <NavigationTabs />
                     <div className="gap-1 flex items-center">
                         <ModeToggle />
-    
                     </div>
                 </header>
                 <Separator />
-                <div className="overflow-auto">
+                <div className="overflow-scroll h-screen">
                     <div className="flex-1 container text-accent-foreground py-4">
                         {children}
                     </div>

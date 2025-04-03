@@ -8,8 +8,7 @@ const BreadCrumbHeader = () => {
     const pathName = usePathname();
     const paths = pathName === "/" ? [""] : pathName.split("/");
     return (
-        <div className='flex items-center flex-start'>
-            <MobileSideBar/>
+        <div className='flex items-center flex-start md:hidden'>
             <Breadcrumb>
                 <BreadcrumbList>
                     {paths.map((path, index) => (
