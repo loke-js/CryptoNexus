@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 export default function page() {
     const { cryptoId } = useParams();
-    const crypto = cryptoId?.toString();
     const dispatch = useDispatch<AppDispatch>();
     const { data, loading } = useSelector((state: RootState) => state.crypto);
     const cryptoDetails = data.find((crypto) => crypto.name.toLowerCase() === cryptoId?.toString().toLowerCase())

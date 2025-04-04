@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../store/store";
 import { fetchCryptoData } from "../../../store/slices/cryptoSlice";
 import CryptoCard from "./_components/CryptoCard";
-import { Loader2Icon } from "lucide-react";
 import Loader from "@/components/Loader";
 import Link from "next/link";
 

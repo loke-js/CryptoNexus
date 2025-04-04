@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../store/store";
 import { fetchPredefinedCities } from "../../../store/slices/weatherSlice";
 import WeatherCard from "./_components/WeatherCard";
-import { Loader2Icon } from "lucide-react";
 import Loader from "@/components/Loader";
 import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";

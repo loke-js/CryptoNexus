@@ -4,9 +4,6 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { AppProviders } from "@/components/providers/AppProviders";
 import { Toaster } from "@/components/ui/sonner";
-import { useDispatch } from "react-redux";
-import { startWebSocket } from "@/lib/startWebSocket";
-import { useAppDispatch } from "@/store/hook";
 import { WebSocketProvider } from "@/components/providers/WebSocketProvider";
 
 const inter = Inter({ subsets: ["latin"] });

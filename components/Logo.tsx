@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { CloudFog, SquareDashedMousePointer } from 'lucide-react';
+import { CloudFog } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react'
 

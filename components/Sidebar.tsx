@@ -1,6 +1,6 @@
 "use client"
 
-import { Cloudy, CoinsIcon, ComputerIcon, HomeIcon, LucideNewspaper, MenuIcon } from 'lucide-react'
+import { Cloudy, CoinsIcon, HomeIcon, LucideNewspaper, MenuIcon } from 'lucide-react'
 import React, { useState } from 'react'
 import Link from 'next/link';
 import { Button, buttonVariants } from './ui/button';

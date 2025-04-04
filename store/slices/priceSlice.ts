@@ -1,6 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AppDispatch } from "../store";
-import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 
 
@@ -29,10 +27,10 @@ const pricesSlice = createSlice({
         const priceChange = ((newPrice - oldPrice) / oldPrice) * 100;
 
         // Show toast for significant change (±2%)
-        if ((priceChange) >= 2) {
+        if ((priceChange) >= 0.000001) {
           toast.success(`${crypto.toUpperCase()} moved by ${priceChange.toFixed(5)}%!`);
         }
-        else if((priceChange) < -1){
+        else if((priceChange) < -0.000001){
             toast.error(`${crypto.toUpperCase()} moved by ${priceChange.toFixed(5)}%!`);
         }
         // Update price for next comparison

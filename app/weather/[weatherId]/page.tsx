@@ -1,14 +1,14 @@
 "use client"
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPredefinedCities, fetchWeatherDetails } from "../../../store/slices/weatherSlice";
+import { fetchPredefinedCities } from "../../../store/slices/weatherSlice";
 import { RootState, AppDispatch } from "../../../store/store";
 import { useParams } from "next/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Layers2 } from "lucide-react";
-import { Area, AreaChart, Bar, BarChart, CartesianGrid, XAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { log } from "console";
+
 
 const chartConfig = {
     temperature: {
@@ -42,6 +42,7 @@ const WeatherDetails: React.FC = () => {
     console.log(chartData);
 
     return (
+        <div className="p-10  ">
         <Card className="p-8">
             <CardHeader>
                 <CardTitle className='text-2xl font-bold flex items-center gap-2'>
@@ -49,11 +50,11 @@ const WeatherDetails: React.FC = () => {
                     Temperature Data
                 </CardTitle>
                 <CardDescription>
-                Last 24 Hours Weather Forecast.
+                Yesterday's Weather Forecast.
                 </CardDescription>
             </CardHeader>
             <CardContent>
-                <ChartContainer config={chartConfig} className='max-h-[200px] w-full'>
+                <ChartContainer config={chartConfig} className='max-h-[300px] w-full'>
                     <BarChart data={chartData} height={200} accessibilityLayer margin={{ top: 20 }}>
                         <CartesianGrid vertical={false} />
                         <XAxis
@@ -71,10 +72,10 @@ const WeatherDetails: React.FC = () => {
                             }}
                         />
                         <ChartLegend content={<ChartLegendContent />} />
-                        <ChartTooltip content={<ChartTooltipContent className='w-[250px]' />} />
+                        <ChartTooltip content={<ChartTooltipContent className='w-[250px]' />}/>
                         <Bar
                             min={0}
-                            type={'bump'}
+                            type={''}
                             fill='var(--color-temperature)'
                             fillOpacity={0.6}
                             stroke='var(--color-temperature)'
@@ -94,6 +95,7 @@ const WeatherDetails: React.FC = () => {
                 </ChartContainer>
             </CardContent>
         </Card>
+        </div>
     );
 };
 

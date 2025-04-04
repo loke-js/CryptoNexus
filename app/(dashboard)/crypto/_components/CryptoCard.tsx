@@ -1,7 +1,7 @@
 import React from "react";
 import { CryptoData, toggleFavoriteCrypto } from "@/store/slices/cryptoSlice";
 import { cn } from "@/lib/utils";
-import { ArrowBigDownIcon, ArrowDown01, ArrowDownFromLineIcon, ArrowDownIcon, ArrowDownNarrowWideIcon, ArrowDownRightIcon, ArrowDownRightSquare, ArrowUpIcon, ArrowUpNarrowWideIcon, ArrowUpWideNarrowIcon, CircleArrowDownIcon, Heart } from "lucide-react";
+import { ArrowDownNarrowWideIcon, ArrowUpWideNarrowIcon, Heart } from "lucide-react";
 import { useAppDispatch } from "@/store/hook";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
