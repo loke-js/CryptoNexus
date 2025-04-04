@@ -114,8 +114,6 @@ components/
 
 - Auto-detect user’s location for weather
 - Add chart toggles for humidity and wind
-- Dark mode support
-- Add favorite crypto & cities
 - Add unit testing with Jest
 
 ---
