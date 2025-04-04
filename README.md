@@ -4,6 +4,23 @@ A real-time data visualization app built with **Next.js 15 App Router**, **Redux
 
 ---
 
+## 🖼️ Screenshots
+
+### 📊 Dashboard Overview
+![Dashboard Overview](./public/screenshots/home.png)
+
+### 🌤️ Weather Page
+![Weather Details](./public/screenshots/WeatherDashboard.png)
+
+### 🌤️ Temperature Graph
+![Weather Details](./public/screenshots/TemperatureGraph.png)
+
+### 🪙 Crypto Page
+![Weather Details](./public/screenshots/BitcoinDashboard.png)
+
+
+---
+
 ## 🔧 Tech Stack
 
 - **Next.js 15 (App Router)** – for SSR/SSG and routing  
