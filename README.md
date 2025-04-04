@@ -125,7 +125,4 @@ Happy to connect on improvements!
 
 ---
 
-## 📄 License
-
-MIT License – Free for personal and commercial use.
 
