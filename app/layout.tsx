@@ -1,8 +1,13 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { AppProviders } from "@/components/providers/AppProviders";
 import { Toaster } from "@/components/ui/sonner";
+import { useDispatch } from "react-redux";
+import { startWebSocket } from "@/lib/startWebSocket";
+import { useAppDispatch } from "@/store/hook";
+import { WebSocketProvider } from "@/components/providers/WebSocketProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 const geistSans = Geist({
@@ -31,6 +36,7 @@ export default function RootLayout({
         className={inter.className}
       >
         <AppProviders>
+        <WebSocketProvider/>
           {children}
         </AppProviders>
       </body>

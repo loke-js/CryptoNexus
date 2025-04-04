@@ -37,6 +37,7 @@ export interface CryptoData {
   last_updated: string; // ISO date string
 }
 
+
 export  interface CryptoState {
   data: CryptoData[];
   favorites: CryptoData[];
@@ -52,12 +53,12 @@ const initialState: CryptoState = {
 // Fetch cryptocurrency data
 export const fetchCryptoData = createAsyncThunk("crypto/fetch", async () => {
   const coinIds = ["bitcoin", "ethereum", "solana"]; // Replace with any other coin you want
-  const response = await axios.get<{ data: CryptoData[] }>(
+  const response = await axios.get<CryptoData[]>(
     `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${coinIds.join(",")}&order=market_cap_desc`,
     {
       headers: {
         accept: "application/json",
-        "x-cg-api-key": "CG-G7Q9h35nB9yKywxQ8z4gKVen",
+        "x-cg-api-key": API_KEY,
       },
     }
   );
